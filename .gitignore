@@ -1,47 +1,25 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# NEVER commit your own config with your user-credentials
+/adm_my_files/config.php
 
-# Folder config file
-Desktop.ini
+# Don't commit your own stuff
+/adm_my_files/*
+!/adm_my_files/mail_templates/
+!/adm_my_files/config_example.php
+!/adm_my_files/index.html
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# Only allow commit of official plugins
+/adm_plugins/*
+!/adm_plugins/birthday/
+!/adm_plugins/calendar/
+!/adm_plugins/login_form/
+!/adm_plugins/random_photo/
+!/adm_plugins/sidebar_announcements/
+!/adm_plugins/sidebar_dates/
+!/adm_plugins/sidebar_downloads/
+!/adm_plugins/sidebar_online/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# Phar Files
+/*.phar
 
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# For custom configuration
+/.php_cs
