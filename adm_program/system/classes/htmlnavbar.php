@@ -76,6 +76,16 @@ class HtmlNavbar
         $this->id         = $id;
         $this->customCssClass = '';
     }
+    
+    public function getLeftItems()
+    {
+        return $this->leftItems;
+    }
+    
+    public function getRightItems()
+    {
+        return $this->rightItems;
+    }
 
     /**
      * Creates the html for the menu entry.
@@ -277,17 +287,23 @@ class HtmlNavbar
         // default navbar should not show the brand, only in xs mode
         if ($this->type === 'default')
         {
-            $cssClassBrand = 'visible-xs-block';
-            $cssClassNavbar = 'navbar-menu';
+            $id = 'main';
+            //$cssClassBrand = 'visible-xs-block';
+            $cssClassNavbar = 'navbar-fixed-top navbar-menu';
         }
         elseif ($this->type === 'filter')
         {
+            $cssClassBrand = 'hidden';
             $cssClassNavbar = 'navbar-filter';
         }
 
+        global $gCurrentOrganization;
+        $gPreferences = $gCurrentOrganization->getPreferences();
+        $gHomepage = ADMIDIO_URL . '/' . $gPreferences['homepage_logout'];
+
         // add html for navbar
         $html = '
-            <nav class="navbar navbar-default ' . $cssClassNavbar . $this->customCssClass . '" role="navigation">
+            <nav id="' . $id . '" class="navbar navbar-default ' . $cssClassNavbar . $this->customCssClass . '" role="navigation">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -297,7 +313,7 @@ class HtmlNavbar
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand ' . $cssClassBrand . '" href="#">' . $this->name . '</a>
+                      <a class="navbar-brand ' . $cssClassBrand . '" href="' . $gHomepage . '"><!--' . $this->name . '--></a>
                     </div>
                     <div class="collapse navbar-collapse" id="' . $this->id . '">';
 

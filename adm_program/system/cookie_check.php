@@ -30,7 +30,7 @@ else
     // remove login page of URL stack
     $gNavigation->deleteLastUrl();
 
-    $showTime = 2000;
+    $showTime = 10;
     if($getMessageCode !== 'SYS_LOGIN_SUCCESSFUL')
     {
         // Wenn es eine andere Meldung, als eine Standard-Meldung ist, dem User mehr Zeit zum lesen lassen

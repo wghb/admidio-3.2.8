@@ -3,15 +3,16 @@
      of an Admidio module page.
 -->
 
-<div id="page" class="container-fluid">
-    <div id="header-block" class="admidio-container">
-        <a href="<?php echo $gHomepage; ?>">
-            <img id="admidio-logo" class="hidden-xs" src="<?php echo THEME_URL; ?>/images/logo.png" alt="Logo" />
-        </a>
-        <div id="page-h1-membership" class="hidden-xs"><?php echo $gL10n->get('SYS_ONLINE_MEMBERSHIP_ADMINISTRATION'); ?></div>
-        <div id="page-h1-orga"><?php echo $gCurrentOrganization->getValue('org_longname'); ?></div>
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <p>Herzlich willkommen beim Wohngebiet Hammerbach!</p>
+        </div>
     </div>
+</header>
 
-    <div class="row">
-        <div class="col-md-9">
-            <div id="left-block" class="admidio-container">
+<div style="text-align: center; padding: 20px; /*border-top: solid 5px rgb(51, 153, 153); border-bottom: solid 1px rgb(51, 153, 153);*/ background-color: rgb(168, 215, 91)"><img src="<?php echo THEME_URL ?>/images/logo_claim.svg" style="width: 50%; opacity: 1" /></div>
+
+<div class="btn-to-top hidden-print" style="display: block;">
+    <span class="glyphicon glyphicon-menu-up"></span>
+</div>

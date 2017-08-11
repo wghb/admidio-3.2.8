@@ -29,29 +29,29 @@ $page = new HtmlPage($headline);
 // main menu of the page
 $mainMenu = $page->getMenu();
 
-if($gValidLogin)
-{
-    // show link to own profile
-    $mainMenu->addItem('adm_menu_item_my_profile', ADMIDIO_URL . FOLDER_MODULES . '/profile/profile.php',
-                       $gL10n->get('PRO_MY_PROFILE'), 'profile.png');
-    // show logout link
-    $mainMenu->addItem('adm_menu_item_logout', ADMIDIO_URL . '/adm_program/system/logout.php',
-                       $gL10n->get('SYS_LOGOUT'), 'door_in.png');
-}
-else
-{
-    // show login link
-    $mainMenu->addItem('adm_menu_item_login', ADMIDIO_URL . '/adm_program/system/login.php',
-                       $gL10n->get('SYS_LOGIN'), 'key.png');
-
-    if($gPreferences['registration_mode'] > 0)
-    {
-        // show registration link
-        $mainMenu->addItem('adm_menu_item_registration',
-                           ADMIDIO_URL . FOLDER_MODULES . '/registration/registration.php',
-                           $gL10n->get('SYS_REGISTRATION'), 'new_registrations.png');
-    }
-}
+//if($gValidLogin)
+//{
+//    // show link to own profile
+//    $mainMenu->addItem('adm_menu_item_my_profile', ADMIDIO_URL . FOLDER_MODULES . '/profile/profile.php',
+//                       $gL10n->get('PRO_MY_PROFILE'), 'profile.png');
+//    // show logout link
+//    $mainMenu->addItem('adm_menu_item_logout', ADMIDIO_URL . '/adm_program/system/logout.php',
+//                       $gL10n->get('SYS_LOGOUT'), 'door_in.png');
+//}
+//else
+//{
+//    // show login link
+//    $mainMenu->addItem('adm_menu_item_login', ADMIDIO_URL . '/adm_program/system/login.php',
+//                       $gL10n->get('SYS_LOGIN'), 'key.png');
+//
+//    if($gPreferences['registration_mode'] > 0)
+//    {
+//        // show registration link
+//        $mainMenu->addItem('adm_menu_item_registration',
+//                           ADMIDIO_URL . FOLDER_MODULES . '/registration/registration.php',
+//                           $gL10n->get('SYS_REGISTRATION'), 'new_registrations.png');
+//    }
+//}
 
 // menu with links to all modules of Admidio
 $moduleMenu = new Menu('index_modules', $gL10n->get('SYS_MODULES'));
